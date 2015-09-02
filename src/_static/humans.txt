@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Matt McFarland - Fullstack Dev - @docodemore
+
+# THANKS
+
+    Sarah C. Corriher
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, Normalize.css
+    NodeJS, Gulp, EcmaScript 5,
+    Handlebars

@@ -1,0 +1,23 @@
+{
+  "name": "mattmcfarland-static",
+  "version": "0.0.0",
+  "description": "The static website for mattmcfarland.com",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt McFarland",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-copy": "0.0.2",
+    "gulp-hb": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.6",
+    "handlebars": "^4.0.0",
+    "lazypipe": "^1.0.1",
+    "static-files": "^0.7.0",
+    "vinyl": "^0.5.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
