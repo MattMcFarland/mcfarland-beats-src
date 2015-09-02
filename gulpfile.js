@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     hb = require('gulp-hb'),
     rename = require('gulp-rename'),
+    copy = require('gulp-copy'),
     data = require('./src/assets/data.json'),
     trackTasks = [],
     processTrackTask = function (track) {
@@ -18,7 +19,7 @@ var gulp = require('gulp'),
 
 
 data.tracks.forEach(function (track, i) {
-    var taskName = 'create-track-' + i;
+    var taskName = 'create-track-' + track.permalink;
     gulp.task(taskName, processTrackTask(track));
     trackTasks.push(taskName);
 });
@@ -26,7 +27,8 @@ data.tracks.forEach(function (track, i) {
 gulp.task('create-tracks', trackTasks);
 
 gulp.task('static-files', function () {
-    var gulpCopy = require('gulp-copy');
     return gulp.src('./src/_static/**/*.*')
-        .pipe(gulpCopy('./web', { prefix: 2}));
-})
+        .pipe(copy('./web', { prefix: 2}));
+});
+
+gulp.task('default', ['create-tracks', 'static-files']);
