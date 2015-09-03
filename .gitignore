@@ -5,3 +5,4 @@ web
 *.mp3
 .idea
 bower_components
+deploy.sh

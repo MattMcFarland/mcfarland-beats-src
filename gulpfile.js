@@ -29,7 +29,7 @@ data.tracks.forEach(function (track, i) {
 gulp.task('create-tracks', trackTasks);
 
 gulp.task('static-files', function () {
-    return gulp.src('./src/_static/**/*.*')
+    return gulp.src('./src/_static/**/*')
         .pipe(copy('./web', { prefix: 2}));
 });
 
