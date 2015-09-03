@@ -4,3 +4,4 @@ dist
 web
 *.mp3
 .idea
+bower_components
