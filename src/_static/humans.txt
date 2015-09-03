@@ -11,7 +11,8 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, Normalize.css
+
+    HTML5-Boilerplate
+    Apache Server Configs,
     NodeJS, Gulp, EcmaScript 5,
-    Handlebars
+    Handlebars, & uikit

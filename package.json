@@ -5,13 +5,16 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "start": "gulp && gulp serve"
   },
   "author": "Matt McFarland",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-copy": "0.0.2",
     "gulp-hb": "^2.6.1",
-    "gulp-rename": "^1.2.2"
+    "gulp-rename": "^1.2.2",
+    "gulp-webserver": "^0.9.1",
+    "uikit": "^2.22.0"
   }
 }

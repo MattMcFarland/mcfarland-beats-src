@@ -4,10 +4,11 @@ var gulp = require('gulp'),
     hb = require('gulp-hb'),
     rename = require('gulp-rename'),
     copy = require('gulp-copy'),
-    data = require('./src/assets/data.json'),
+    data = require('./src/assets/data/tracks.json'),
     trackTasks = [],
+    devserver = require('gulp-webserver'),
     processTrackTask = function (track) {
-        gulp.src('./src/track.hbs')
+        gulp.src('./src/assets/track.hbs')
             .pipe(hb({
                 data: track,
                 helpers: './src/assets/helpers/*.js',
@@ -31,4 +32,29 @@ gulp.task('static-files', function () {
         .pipe(copy('./web', { prefix: 2}));
 });
 
-gulp.task('default', ['create-tracks', 'static-files']);
+gulp.task('create-pages', function () {
+    return gulp
+        .src('./src/assets/pages/*.hbs')
+        .pipe(hb({
+            data: './src/assets/data/*.json',
+            helpers: './src/assets/helpers/*.js',
+            partials: './src/assets/partials/**/*.hbs'
+        }))
+        .pipe(rename(function (path) {
+            path.extname=".html"
+        }))
+        .pipe(gulp.dest('./web/'));
+});
+
+
+
+gulp.task('serve', function() {
+    gulp.src('./web')
+        .pipe(devserver({
+            livereload: true,
+            directoryListing: true,
+            open: true
+        }));
+});
+
+gulp.task('default', ['create-tracks', 'create-pages', 'static-files']);
