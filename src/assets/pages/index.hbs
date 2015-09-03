@@ -1,8 +1,23 @@
-{{> header }}
+{{> header title=index.title description=index.description}}
 <article class="uk-article">
     <header>
         <h1 class="uk-article-title">{{index.title}}</h1>
         <p class="uk-article-lead">{{index.description}}</p>
     </header>
+    <section>
+        <h2>Tracks</h2>
+        <div class="uk-overflow-container">
+            <table class="uk-table">
+                <thead>
+                <tr>
+                    <th>Genre</th><th>Name</th><th>Duration</th>
+                </tr>
+                </thead>
+                {{#each tracks.tracks}}
+                    {{> trackrow}}
+                {{/each}}
+            </table>
+        </div>
+    </section>
 </article>
 {{> footer }}

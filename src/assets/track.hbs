@@ -1,3 +1,34 @@
-{{> header }}
-{{ title }}
+{{> header title=title description=description}}
+{{> crumb page=title}}
+<article class="uk-article">
+    <h1 class="uk-article-title">{{title}}</h1>
+    <p>{{description}}</p>
+    <p class="uk-panel">
+    <iframe
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameborder="no"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{id}}&amp;color=00a8e6&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+    </iframe>
+    </p>
+    <p>
+        <a class="uk-button uk-button-primary uk-button-large" href="/data/{{permalink}}.mp3" download><span class="uk-icon-cloud-download"></span>&nbsp;Download</a>
+    </p>
+    <p class="uk-panel">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'mattmcfarland';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    </p>
+</article>
 {{> footer}}
+

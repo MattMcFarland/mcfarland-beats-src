@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     hb = require('gulp-hb'),
     rename = require('gulp-rename'),
+    rsync = require('gulp-rsync'),
     copy = require('gulp-copy'),
     data = require('./src/assets/data/tracks.json'),
     trackTasks = [],
@@ -55,6 +56,18 @@ gulp.task('serve', function() {
             directoryListing: true,
             open: true
         }));
+});
+
+
+gulp.task('deploy', function () {
+   gulp.src('./web/**/*.*')
+       .pipe(rsync({
+           hostname: 'mattmcfarland.healthwyze.org',
+           destination: '/aa/hosted/mattmcfarland.com',
+           relative: false,
+           port: 777,
+           username: 'matt'
+       }))
 });
 
 gulp.task('default', ['create-tracks', 'create-pages', 'static-files']);
