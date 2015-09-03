@@ -59,15 +59,4 @@ gulp.task('serve', function() {
 });
 
 
-gulp.task('deploy', function () {
-   gulp.src('./web/**/*.*')
-       .pipe(rsync({
-           hostname: 'mattmcfarland.healthwyze.org',
-           destination: '/aa/hosted/mattmcfarland.com',
-           relative: false,
-           port: 777,
-           username: 'matt'
-       }))
-});
-
 gulp.task('default', ['create-tracks', 'create-pages', 'static-files']);
