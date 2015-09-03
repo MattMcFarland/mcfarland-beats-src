@@ -1,9 +1,10 @@
-{{> header title=about.title description=about.description}}
+{{> header itemtype="http://schema.org/AboutPage" title=about.title description=about.description}}
 {{> crumb page="About"}}
 
 <article class="uk-article">
-    <h1 class="uk-article-title">{{about.title}}</h1>
-    <p class="uk-article-lead">{{about.description}}</p>
+    <h1 itemprop="name" class="uk-article-title">{{about.title}}</h1>
+    <p itemprop="about" class="uk-article-lead">{{about.description}}</p>
+    <div itemprop="description">
     <h2>History</h2>
     <p>The site has been in existence since 2005, and you can find its previous design patterns on the internet <a href="https://web.archive.org/web/20120301000000*/http://mattmcfarland.com">wayback machine here</a>.</p>
     <p>A lot has changed over the years, and I really no longer make music, as my aspirations and passions have been circled around software engineering.</p>
@@ -13,5 +14,6 @@
     <p>I'm not planning on making music any more, at least not in the near future.  The joys of programming have just been by far more rewarding.</p>
     <h2>Have any questions, suggestions or comments?</h2>
     <p>Please feel free to contact me using the contact tab at the top.  I am open to all suggestions and ideas and am here to answer your questions.  You can expect a response within 24 hours.  Thanks for visiting!!!</p>
+    </div>
 </article>
 {{> footer }}

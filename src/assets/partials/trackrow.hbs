@@ -1,5 +1,10 @@
-<tr>
-    <td>{{genre}}</td>
-    <td><a href="/tracks/{{permalink}}">{{title}}</a></td>
+<tr itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+    <td itemprop="genre">{{genre}}</td>
+    <td><a title="listen to, comment on, or download {{title}} by McFarland BEATS" itemprop="sameAs" rel="canonical" href="http://www.mattmcfarland.com/tracks/{{permalink}}"><span itemprop="name">{{title}}</span></a>
+        <meta content="http://www.mattmcfarland.com/data/{{permalink}}.mp3" itemprop="url"/>
+        <meta content="McFarland BEATS" itemprop="byArtist"/>
+        <meta content="{{toISO duration}}" itemprop="duration"/>
+        <meta content="https://creativecommons.org/licenses/by/4.0/" itemprop="license"/>
+    </td>
     <td>{{convertTime duration}}</td>
 </tr>

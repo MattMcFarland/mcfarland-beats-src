@@ -1,11 +1,12 @@
-{{> header title=index.title description=index.description}}
+{{> header itemtype="http://schema.org/CollectionPage" title=index.title description=index.description}}
 <article class="uk-article">
     <header>
-        <h1 class="uk-article-title">{{index.title}}</h1>
-        <p class="uk-article-lead">{{index.description}}</p>
+        <h1 itemprop="name" class="uk-article-title">{{index.title}}</h1>
+        <p itemprop="description" class="uk-article-lead">{{index.description}}</p>
     </header>
-    <section>
-        <h2>Tracks</h2>
+    <section itemscope itemtype="http://schema.org/MusicPlaylist" >
+        <h2 itemprop="name">Tracks</h2>
+        <meta itemprop="numTracks" content="61"/>
         <div class="uk-overflow-container">
             <table class="uk-table">
                 <thead>

@@ -1,21 +1,33 @@
-{{> header title=title description=description}}
+{{> header itemtype="http://schema.org/ItemPage" title=title description=description}}
 {{> crumb page=title}}
-<article class="uk-article">
-    <h1 class="uk-article-title">{{title}}</h1>
-    <p>{{description}}</p>
+<article itemprop="mainEntity" itemscope itemtype="http://schema.org/MusicRecording" class="uk-article">
+    <meta itemprop="duration" content="{{toISO duration}}" />
+    <meta itemprop="url" content="http://www.mattmcfarland.com/tracks/{{permalink}}" />
+    <meta itemprop="isFamilyFriendly" content=true" />
+    <h1 itemprop="name" class="uk-article-title"><a title="Permalink URL to this page" rel="canonical" href="http://www.mattmcfarland.com/tracks/{{permalink}}">{{title}}</a></h1>
+    <p class="uk-article-meta">
+        <span  rel="author" itemprop="byArtist">McFarland BEATS</span>
+        &nbsp;-&nbsp;
+        <span itemprop="genre">{{genre}}</span>
+        &nbsp;-&nbsp;
+        <span itemprop="dateCreated">{{created_at}}</span>
+    </p>
+    <h2>Description</h2>
+    <p itemprop="about">{{description}}</p>
     <p class="uk-panel">
-    <iframe
+    <iframe itemprop="audio"
             width="100%"
             height="166"
             scrolling="no"
             frameborder="no"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{id}}&amp;color=00a8e6&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{id}}&amp;color=00a8e6&amp;auto_play=true&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
     </iframe>
     </p>
     <p>
-        <a class="uk-button uk-button-primary uk-button-large" href="/data/{{permalink}}.mp3" download><span class="uk-icon-cloud-download"></span>&nbsp;Download</a>
+        <a title="Download {{title}} by McFarland BEATS." itemprop="url" rel="attachment" class="uk-button uk-button-primary uk-button-large" href="/data/{{permalink}}.mp3" download><span class="uk-icon-cloud-download"></span>&nbsp;Download</a>
     </p>
     <p class="uk-panel">
+    <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */

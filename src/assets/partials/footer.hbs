@@ -4,27 +4,28 @@
 <footer>
     <div class="uk-block uk-block-primary uk-contrast uk-block-large">
     <section class="uk-container uk-container-center">
-        <h3><span class="uk-icon-music uk-text-muted"></span>&nbsp;McFarland BEATS</h3>
+        <h3><span class="uk-icon-music uk-text-muted"></span>&nbsp;<span rel="publisher" itemprop="publisher">McFarland BEATS</span></h3>
         <div class="uk-grid uk-grid-match">
             <div class="uk-width-1-3">
                 <div class="uk-panel">
-                    <p><em>Proudly created by MattMcFarland</em></p>
-                    <a href="https://github.com/MattMcFarland" class="uk-icon-button uk-icon-github"></a>
-                    <a href="https://twitter.com/docodemore" class="uk-icon-button uk-icon-twitter"></a>
-                    <a href="https://www.linkedin.com/pub/matthew-mcfarland/6a/b9a/135" class="uk-icon-button uk-icon-linkedin"></a>
+                    <p><em>Proudly created by <strong rel="author" itemprop="author">Matt McFarland</strong></em></p>
+                    <a rel="profile" title="Visit Matt McFarland's Github Page" href="https://github.com/MattMcFarland" class="uk-icon-button uk-icon-github"></a>
+                    <a rel="profile" title="Visit Matt McFarland's Twitter Page" href="https://twitter.com/docodemore" class="uk-icon-button uk-icon-twitter"></a>
+                    <a rel="profile" title="Visit Matt McFarland's LinkedIn Page" href="https://www.linkedin.com/pub/matthew-mcfarland/6a/b9a/135" class="uk-icon-button uk-icon-linkedin"></a>
                 </div>
             </div>
             <div class="uk-width-1-3">
                 <div class="uk-panel">
                     <p>
                         McFarland BEATS Royalty Free Music by Matthew A McFarland is licensed under
-                        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                        <a title="License information" rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
                     </p>
                 </div>
             </div>
             <div class="uk-width-1-3">
                 <div class="uk-panel">
-                    <p><span class="uk-icon-gears uk-text-muted"></span>&nbsp;Generated with <a href="//nodejs.org">NodeJS</a> @ {{timestamp}}</p>
+                    <p><span class="uk-icon-gears uk-text-muted"></span>&nbsp;Generated with <a title="NodeJS Rocks!" href="//nodejs.org">NodeJS</a> @ {{timestamp}}</p>
+                    <p class="uk-align-right"><a rel="nofollow" title="View the source code for www.mattmcfarland.com" href="//github.com/MattMcFarland/mcfarland-beats-src">View Source</a></p>
                 </div>
             </div>
         </div>
@@ -32,6 +33,8 @@
     </div>
 </footer>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/uikit.min.js"></script>
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

@@ -1,10 +1,11 @@
-{{>header title=license.title description=license.description}}
+{{>header itemtype="http://schema.org/QAPage" title=license.title description=license.description}}
 {{> crumb page="license"}}
 <article class="uk-article">
     <header>
-        <h1 class="uk-article-title">{{license.title}}</h1>
-        <p class="uk-article-lead">{{license.description}}</p>
+        <h1 itemprop="name" class="uk-article-title">{{license.title}}</h1>
+        <p itemprop="about" class="uk-article-lead">{{license.description}}</p>
     </header>
+    <div itemprop="description">
     <h2>You are free to:</h2>
     <dl class="uk-description-list-horizontal">
         <dd><strong>Share</strong> — copy and redistribute the material in any medium or format</dd>
@@ -19,6 +20,7 @@
     <p>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.</p>
     <p>No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.</p>
     <p>This is a human-readable summary of (and not a substitute for) the <a href="http://creativecommons.org/licenses/by/4.0/legalcode">license.</a></p>
+    </div>
 </article>
 
 {{>footer}}
