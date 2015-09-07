@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cd web && pwd && rsync -azrP -e "ssh -p 777" . matt@69.64.69.151:/aa/hosted/mattmcfarland.com && cd ..
