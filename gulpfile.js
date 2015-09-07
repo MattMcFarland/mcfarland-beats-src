@@ -3,8 +3,10 @@
 var gulp = require('gulp'),
     hb = require('gulp-hb'),
     rename = require('gulp-rename'),
-    rsync = require('gulp-rsync'),
+    concat = require('gulp-concat'),
+    uncss = require('gulp-uncss'),
     copy = require('gulp-copy'),
+    minify = require('gulp-minify-css'),
     data = require('./src/assets/data/tracks.json'),
     trackTasks = [],
     devserver = require('gulp-webserver'),
@@ -47,7 +49,13 @@ gulp.task('create-pages', function () {
         .pipe(gulp.dest('./web/'));
 });
 
+gulp.task('clean-css', function () {
+    return gulp.src('./src/assets/css/**/*.css')
+      .pipe(concat('main.css'))
+      .pipe(minify())
+      .pipe(gulp.dest('./web/css/'))
 
+});
 
 gulp.task('serve', function() {
     gulp.src('./web')
@@ -59,4 +67,4 @@ gulp.task('serve', function() {
 });
 
 
-gulp.task('default', ['create-tracks', 'create-pages', 'static-files']);
+gulp.task('default', ['create-tracks', 'create-pages', 'static-files', 'clean-css']);
